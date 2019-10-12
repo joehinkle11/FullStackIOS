@@ -7,10 +7,12 @@
 //
 
 import SwiftUI
+import SharedApp
 
+//var stuff = User()
 struct ContentView: View {
     var body: some View {
-        Text("Hello World")
+        Text("Hello World ")
     }
 }
 

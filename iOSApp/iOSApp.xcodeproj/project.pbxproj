@@ -32,7 +32,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9F3D6E592351553500E1DA58 /* SharedApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SharedApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3D6E5B2351558400E1DA58 /* SharedApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SharedApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F75A4DD23514BB20090A718 /* iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F75A4E023514BB20090A718 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,7 +41,6 @@
 		9F75A4E923514BB30090A718 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F75A4EC23514BB30090A718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F75A4EE23514BB30090A718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F75A50C23514D270090A718 /* SharedApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SharedApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				9F3D6E5B2351558400E1DA58 /* SharedApp.framework */,
-				9F3D6E592351553500E1DA58 /* SharedApp.framework */,
-				9F75A50C23514D270090A718 /* SharedApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
