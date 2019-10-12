@@ -24,10 +24,23 @@ public class FullStackObjectClass {
     }
     
     public class FullStackProperty<T> {
+        
+        public enum PropertyAvailability {
+            /// property is fully serviced by the backend
+            case available
+            /// property is only serviced  by the backend when it already exists on an object in the database, and will throw warnings when used in the frontend
+            case legacy
+            /// property is fully serviced by the backend, but will throw warnings when used in the frontend
+            case deprecated
+            /// property is never serviced by the backend, and will throw errors when used in the frontend
+            case obsolete
+            /// property is never serviced by the backend, but will not through warnings or errors when used in the frontend
+            case invisible
+        }
        
         private let databasePropertyName: String
         private let previousDatabasePropertyNames: [String] = []
-        private var isDeprecated: Bool = false
+        private var availability: PropertyAvailability = .available
         private let publicPermissions: [Permissions] = []
         public var value: T?
         
@@ -35,8 +48,31 @@ public class FullStackObjectClass {
             self.databasePropertyName = databasePropertyName
         }
         
+        
+        
+        /// property is fully serviced by the backend
+        public func available() -> FullStackProperty<T> {
+            self.availability = .deprecated
+            return self
+        }
+        /// property is only serviced  by the backend when it already exists on an object in the database, and will throw warnings when used in the frontend
+        public func legacy() -> FullStackProperty<T> {
+            self.availability = .legacy
+            return self
+        }
+        /// property is fully serviced by the backend, but will throw warnings when used in the frontend
         public func deprecated() -> FullStackProperty<T> {
-            self.isDeprecated = true
+            self.availability = .deprecated
+            return self
+        }
+        /// property is never serviced by the backend, and will throw errors when used in the frontend
+        public func obsolete() -> FullStackProperty<T> {
+            self.availability = .obsolete
+            return self
+        }
+        /// property is never serviced by the backend, but will not through warnings or errors when used in the frontend
+        public func invisible() -> FullStackProperty<T> {
+            self.availability = .invisible
             return self
         }
     }
@@ -61,13 +97,11 @@ public class User: FullStackObject {
     static public var databaseCollectionName = "User"
     
     // properties
-    public var username = FullStackString( databasePropertyName: "username")
-    
-    public var superPower = FullStackString( databasePropertyName: "superPower").deprecated()
+    public var username = FullStackString( databasePropertyName: "username").deprecated()
     
     public init(username: String) {
 //        self.username =
-        print(self.username.value ?? "")
+        self.username.deprecated()
     }
 }
 
