@@ -10,6 +10,10 @@ import Foundation
 
 public typealias FullStackObject = FullStackObjectClass & FullStackObjectPrototype
 
+public protocol FullStackObjectPrototype {
+    static var databaseCollectionName: String { get }
+}
+
 public class FullStackObjectClass {
     
     public enum Permissions {
@@ -21,17 +25,6 @@ public class FullStackObjectClass {
     
     public class FullStackProperty {
         
-        
-        
-        
-        public class FullStackValue {
-//            var value: T
-//
-//            init( value: T) {
-//                self.value = value
-//            }
-        }
-        
         public enum FullStackValueTypes {
             case string
         }
@@ -40,12 +33,17 @@ public class FullStackObjectClass {
             FullStackValueTypes.string: String.self
         ]
         
-        public let databasePropertyName: String
-        public let previousDatabasePropertyNames: [String] = []
+        private let databasePropertyName: String
+        private let previousDatabasePropertyNames: [String] = []
         private let isDeprecated: Bool = false
         private let publicPermissions: [Permissions] = []
-        private var type: FullStackValueTypes
-        private var swiftType: Any.Type
+        private let type: FullStackValueTypes
+        private let swiftType: Any.Type
+        public var localValue: Any? {
+            get {
+                return ""
+            }
+        }
         
         public init( type: FullStackValueTypes, databasePropertyName: String ) {
             self.databasePropertyName = databasePropertyName
@@ -59,18 +57,12 @@ public class FullStackObjectClass {
     }
     
     //
-//    public var
     
     //
     public init() {
 
     }
 }
-
-public protocol FullStackObjectPrototype {
-    static var databaseCollectionName: String { get }
-}
-
 
 
 public class User: FullStackObject {
@@ -82,6 +74,7 @@ public class User: FullStackObject {
     
     public init(username: String) {
 //        self.username =
+        self.username.localValue
     }
 }
 
