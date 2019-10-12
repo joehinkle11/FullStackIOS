@@ -11,7 +11,9 @@ import Foundation
 public typealias FullStackObject = FullStackObjectClass & FullStackObjectPrototype
 
 public class FullStackObjectClass {
-    
+    public init() {
+
+    }
 }
 
 public protocol FullStackObjectPrototype {

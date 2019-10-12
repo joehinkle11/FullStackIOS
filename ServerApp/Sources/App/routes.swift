@@ -8,9 +8,9 @@ public func routes(_ router: Router) throws {
     let userController = UserController()
     router.post("users", use: userController.create)
     
-    let test = Test().prop
+    let test = FullStackObjectClass()
     router.get("test") { req in
-        return test
+        return "asdfsdf"
     }
     
     // basic / password auth protected routes
