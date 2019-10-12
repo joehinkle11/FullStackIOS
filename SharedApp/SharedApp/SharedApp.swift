@@ -25,25 +25,36 @@ public class FullStackObjectClass {
         
         
         public class FullStackValue {
-            var value: T
-            
-            init( value: T) {
-                self.value = value
-            }
+//            var value: T
+//
+//            init( value: T) {
+//                self.value = value
+//            }
         }
         
         public enum FullStackValueTypes {
             case string
         }
         
+        private static let FullStackValueTypesToSwiftTypes = [
+            FullStackValueTypes.string: String.self
+        ]
+        
         public let databasePropertyName: String
         public let previousDatabasePropertyNames: [String] = []
         private let isDeprecated: Bool = false
         private let publicPermissions: [Permissions] = []
-        public var value: T?
+        private var type: FullStackValueTypes
+        private var swiftType: Any.Type
         
         public init( type: FullStackValueTypes, databasePropertyName: String ) {
             self.databasePropertyName = databasePropertyName
+            self.type = type
+            if let swiftType = FullStackProperty.FullStackValueTypesToSwiftTypes[type] {
+                self.swiftType = swiftType
+            } else {
+                fatalError("Unable to create FullStackProperty with databasePropertyName \"" + databasePropertyName + "\" because there an invalid FullStackValueTypes was provided")
+            }
         }
     }
     
