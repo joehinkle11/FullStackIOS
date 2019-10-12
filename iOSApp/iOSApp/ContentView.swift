@@ -7,12 +7,12 @@
 //
 
 import SwiftUI
-import SharedApp
+import SharedApp2
 
 var stuff = User(username: "asdf" )
 struct ContentView: View {
     var body: some View {
-        Text("Hello World \(stuff.Database_Collection_Name)")
+        Text("Hello World \(User.Database_Collection_Name)")
     }
 }
 

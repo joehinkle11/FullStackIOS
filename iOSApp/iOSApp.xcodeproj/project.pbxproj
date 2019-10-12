@@ -13,6 +13,8 @@
 		9F75A4E723514BB30090A718 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F75A4E623514BB30090A718 /* Assets.xcassets */; };
 		9F75A4EA23514BB30090A718 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F75A4E923514BB30090A718 /* Preview Assets.xcassets */; };
 		9F75A4ED23514BB30090A718 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F75A4EB23514BB30090A718 /* LaunchScreen.storyboard */; };
+		9FF090A323516BDD00194A68 /* SharedApp2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF090A223516BDD00194A68 /* SharedApp2.framework */; };
+		9FF090A423516BDD00194A68 /* SharedApp2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF090A223516BDD00194A68 /* SharedApp2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -22,6 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9FF090A423516BDD00194A68 /* SharedApp2.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,6 +41,7 @@
 		9F75A4EC23514BB30090A718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F75A4EE23514BB30090A718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FF0909E2351683000194A68 /* SharedApp2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SharedApp2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FF090A223516BDD00194A68 /* SharedApp2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SharedApp2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF090A323516BDD00194A68 /* SharedApp2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +98,7 @@
 		9F75A50B23514D270090A718 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9FF090A223516BDD00194A68 /* SharedApp2.framework */,
 				9FF0909E2351683000194A68 /* SharedApp2.framework */,
 			);
 			name = Frameworks;
