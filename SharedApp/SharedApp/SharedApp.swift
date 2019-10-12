@@ -24,7 +24,7 @@ public protocol FullStackObjectPrototype {
 
 public class User: FullStackObject {
     // setup
-    static public var Database_Collection_Name = "User_Collection"
+    static public var Database_Collection_Name = "User"
     
     // properties
     public var username: String
