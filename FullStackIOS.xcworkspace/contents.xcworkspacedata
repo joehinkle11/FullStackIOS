@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:ServerApp/ServerApp.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SharedApp/SharedApp.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:iOSApp/iOSApp.xcodeproj">
+   </FileRef>
+</Workspace>
