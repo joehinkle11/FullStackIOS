@@ -11,18 +11,23 @@ import Foundation
 public typealias FullStackObject = FullStackObjectClass & FullStackObjectPrototype
 
 public class FullStackObjectClass {
-    public init() {}
+    
 }
 
 public protocol FullStackObjectPrototype {
-    var prop: String { get set }
+    var Database_Collection_Name: String { get }
 }
 
 
 
-public class Test: FullStackObject {
-    public var prop: String = "hi haha"
+public class User: FullStackObject {
+    // setup
+    public var Database_Collection_Name = "User"
     
+    // properties
+    public var username: String
     
-    
+    init(username: String) {
+        self.username = username
+    }
 }
