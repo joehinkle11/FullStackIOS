@@ -17,19 +17,19 @@ public class FullStackObjectClass {
 }
 
 public protocol FullStackObjectPrototype {
-    var Database_Collection_Name: String { get }
+    static var Database_Collection_Name: String { get }
 }
 
 
 
 public class User: FullStackObject {
     // setup
-    public var Database_Collection_Name = "User"
+    static public var Database_Collection_Name = "User_Collection"
     
     // properties
     public var username: String
     
-    init(username: String) {
+    public init(username: String) {
         self.username = username
     }
 }

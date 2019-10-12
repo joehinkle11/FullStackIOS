@@ -9,8 +9,9 @@ public func routes(_ router: Router) throws {
     router.post("users", use: userController.create)
     
     let test = FullStackObjectClass()
+    let thing = SharedApp.User.Database_Collection_Name
     router.get("test") { req in
-        return "asdfsdf"
+        return thing
     }
     
     // basic / password auth protected routes

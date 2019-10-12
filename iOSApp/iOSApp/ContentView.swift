@@ -9,10 +9,10 @@
 import SwiftUI
 import SharedApp
 
-var stuff = User()
+var stuff = User(username: "asdf" )
 struct ContentView: View {
     var body: some View {
-        Text("Hello World ")
+        Text("Hello World \(stuff.Database_Collection_Name)")
     }
 }
 

@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9F3D6E6A2351605900E1DA58 /* Embed Frameworks */ = {
+		9FF090A12351683000194A68 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -37,6 +37,7 @@
 		9F75A4E923514BB30090A718 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F75A4EC23514BB30090A718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F75A4EE23514BB30090A718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FF0909E2351683000194A68 /* SharedApp2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SharedApp2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +93,7 @@
 		9F75A50B23514D270090A718 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9FF0909E2351683000194A68 /* SharedApp2.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,7 +108,7 @@
 				9F75A4D923514BB20090A718 /* Sources */,
 				9F75A4DA23514BB20090A718 /* Frameworks */,
 				9F75A4DB23514BB20090A718 /* Resources */,
-				9F3D6E6A2351605900E1DA58 /* Embed Frameworks */,
+				9FF090A12351683000194A68 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
