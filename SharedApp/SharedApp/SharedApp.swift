@@ -27,12 +27,17 @@ public class FullStackObjectClass {
        
         private let databasePropertyName: String
         private let previousDatabasePropertyNames: [String] = []
-        private let isDeprecated: Bool = false
+        private var isDeprecated: Bool = false
         private let publicPermissions: [Permissions] = []
-        public var localValue: T?
+        public var value: T?
         
         public init( databasePropertyName: String ) {
             self.databasePropertyName = databasePropertyName
+        }
+        
+        public func deprecated() -> FullStackProperty<T> {
+            self.isDeprecated = true
+            return self
         }
     }
     
@@ -58,9 +63,11 @@ public class User: FullStackObject {
     // properties
     public var username = FullStackString( databasePropertyName: "username")
     
+    public var superPower = FullStackString( databasePropertyName: "superPower").deprecated()
+    
     public init(username: String) {
 //        self.username =
-//        self.username.localValue
+        print(self.username.value ?? "")
     }
 }
 
