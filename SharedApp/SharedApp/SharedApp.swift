@@ -23,36 +23,16 @@ public class FullStackObjectClass {
         case delete
     }
     
-    public class FullStackProperty {
-        
-        public enum FullStackValueTypes {
-            case string
-        }
-        
-        private static let FullStackValueTypesToSwiftTypes = [
-            FullStackValueTypes.string: String.self
-        ]
-        
+    public class FullStackProperty<T> {
+       
         private let databasePropertyName: String
         private let previousDatabasePropertyNames: [String] = []
         private let isDeprecated: Bool = false
         private let publicPermissions: [Permissions] = []
-        private let type: FullStackValueTypes
-        private let swiftType: Any.Type
-        public var localValue: Any? {
-            get {
-                return ""
-            }
-        }
+        public var localValue: T?
         
-        public init( type: FullStackValueTypes, databasePropertyName: String ) {
+        public init( databasePropertyName: String ) {
             self.databasePropertyName = databasePropertyName
-            self.type = type
-            if let swiftType = FullStackProperty.FullStackValueTypesToSwiftTypes[type] {
-                self.swiftType = swiftType
-            } else {
-                fatalError("Unable to create FullStackProperty with databasePropertyName \"" + databasePropertyName + "\" because there an invalid FullStackValueTypes was provided")
-            }
         }
     }
     
@@ -62,7 +42,13 @@ public class FullStackObjectClass {
     public init() {
 
     }
+    
+    public typealias FullStackString = FullStackProperty<String>
+    public typealias FullStackInt = FullStackProperty<Int>
+    public typealias FullStackBool = FullStackProperty<Bool>
 }
+
+
 
 
 public class User: FullStackObject {
@@ -70,11 +56,11 @@ public class User: FullStackObject {
     static public var databaseCollectionName = "User"
     
     // properties
-    public var username = FullStackProperty( type: .string, databasePropertyName: "username")
+    public var username = FullStackString( databasePropertyName: "username")
     
     public init(username: String) {
 //        self.username =
-        self.username.localValue
+//        self.username.localValue
     }
 }
 
