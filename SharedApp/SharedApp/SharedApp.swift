@@ -97,11 +97,11 @@ public class User: FullStackObject {
     static public var databaseCollectionName = "User"
     
     // properties
-    public var username = FullStackString( databasePropertyName: "username").deprecated()
+    public var username = FullStackString( databasePropertyName: "username")
+    public var superPower = FullStackString( databasePropertyName: "superPower").deprecated()
     
     public init(username: String) {
-//        self.username =
-        self.username.deprecated()
+        
     }
 }
 
