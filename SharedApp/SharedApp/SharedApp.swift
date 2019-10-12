@@ -12,8 +12,6 @@ public typealias FullStackObject = FullStackObjectClass & FullStackObjectPrototy
 
 public class FullStackObjectClass {
     
-//    public classFullStackProperty
-    
     public enum Permissions {
         case read
         case write
@@ -21,26 +19,38 @@ public class FullStackObjectClass {
         case delete
     }
     
-    
     public class FullStackProperty {
-        public let databasePropertyName: String
-        public let previousDatabasePropertyNames: [String]
-        public let isDeprecated: Bool
-        public let publicPermissions: [Permissions]
         
-        public init(
-            databasePropertyName: String,
-            previousDatabasePropertyNames: [String] = [],
-            isDeprecated: Bool = false,
-            publicPermissions: [Permissions] = []
-        ) {
+        
+        
+        
+        public class FullStackValue {
+            var value: T
+            
+            init( value: T) {
+                self.value = value
+            }
+        }
+        
+        public enum FullStackValueTypes {
+            case string
+        }
+        
+        public let databasePropertyName: String
+        public let previousDatabasePropertyNames: [String] = []
+        private let isDeprecated: Bool = false
+        private let publicPermissions: [Permissions] = []
+        public var value: T?
+        
+        public init( type: FullStackValueTypes, databasePropertyName: String ) {
             self.databasePropertyName = databasePropertyName
-            self.previousDatabasePropertyNames = previousDatabasePropertyNames
-            self.isDeprecated = isDeprecated
-            self.publicPermissions = publicPermissions
         }
     }
     
+    //
+//    public var
+    
+    //
     public init() {
 
     }
@@ -57,10 +67,7 @@ public class User: FullStackObject {
     static public var databaseCollectionName = "User"
     
     // properties
-    public var username = FullStackProperty(
-        databasePropertyName: "username",
-        publicPermissions: [.read]
-    )
+    public var username = FullStackProperty( type: .string, databasePropertyName: "username")
     
     public init(username: String) {
 //        self.username =
