@@ -10,6 +10,10 @@ import SwiftUI
 import SharedApp2
 
 var stuff = User(username: "asdf" )
+
+
+let test: [User] = User.query( predicate: "asdf")
+
 struct ContentView: View {
     var body: some View {
         Text("Hello World \(User.databaseCollectionName)")

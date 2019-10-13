@@ -25,16 +25,11 @@ public class FullStackObjectClass {
     
     public class FullStackProperty<T> {
         
-        public enum PropertyAvailability {
-            /// property is fully serviced by the backend
+        enum PropertyAvailability {
             case available
-            /// property is only serviced  by the backend when it already exists on an object in the database, and will throw warnings when used in the frontend
             case legacy
-            /// property is fully serviced by the backend, but will throw warnings when used in the frontend
             case deprecated
-            /// property is never serviced by the backend, and will throw errors when used in the frontend
             case obsolete
-            /// property is never serviced by the backend, but will not through warnings or errors when used in the frontend
             case invisible
         }
        
@@ -48,6 +43,10 @@ public class FullStackObjectClass {
             self.databasePropertyName = databasePropertyName
         }
         
+        
+        func sync( completion: (String) -> () ) {
+            completion("asdf")
+        }
         
         
         /// property is fully serviced by the backend
@@ -84,6 +83,11 @@ public class FullStackObjectClass {
 
     }
     
+    public static func query( predicate: String, completion: ([FullStackObject], String?, Any.Type) -> () ) {
+        let type = self
+        completion( [] as aType, nil, type )
+    }
+    
     public typealias FullStackString = FullStackProperty<String>
     public typealias FullStackInt = FullStackProperty<Int>
     public typealias FullStackBool = FullStackProperty<Bool>
@@ -101,7 +105,29 @@ public class User: FullStackObject {
     public var superPower = FullStackString( databasePropertyName: "superPower").deprecated()
     
     public init(username: String) {
-        
+
+    }
+    
+    
+}
+
+
+func aTest() {
+    User.query( predicate: "usersname like \"hink\"") { results, error, aType in
+        print(aType)
+        if let listOfUsers = results as? [User] {
+            print(listOfUsers)
+        }
     }
 }
 
+
+
+let something = aTest()
+
+public class User2: FullStackObject {
+    // setup
+    static public var databaseCollectionName = "User"
+
+}
+let test2 = User2.query( predicate: "some string")
