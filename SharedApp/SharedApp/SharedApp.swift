@@ -18,7 +18,7 @@ public class FullStackObjectClass {
     
     public enum Permissions {
         case read
-        case write
+        case update
         case create
         case delete
     }
@@ -36,7 +36,9 @@ public class FullStackObjectClass {
         private let databasePropertyName: String
         private let previousDatabasePropertyNames: [String] = []
         private var availability: PropertyAvailability = .available
-        private let publicPermissions: [Permissions] = []
+        private var publicPermissions: [Permissions] = []
+        private var isPrimaryKey: Bool = false
+        private var isUnique: Bool = false
         public var value: T?
         
         public init( databasePropertyName: String ) {
@@ -48,6 +50,19 @@ public class FullStackObjectClass {
             completion("asdf")
         }
         
+        
+        ///
+        public func primaryKey() -> FullStackProperty<T> {
+            self.isPrimaryKey = true
+            self.isUnique = true
+            return self
+        }
+        
+        ///
+        public func setPublicPermission( permissions: [Permissions] ) -> FullStackProperty<T> {
+            self.publicPermissions = permissions
+            return self
+        }
         
         /// property is fully serviced by the backend
         public func available() -> FullStackProperty<T> {
@@ -77,16 +92,22 @@ public class FullStackObjectClass {
     }
     
     //
+    private var docId: String?
     
     //
     public init() {
 
     }
     
-    public static func query( predicate: String, completion: ([FullStackObject], String?, Any.Type) -> () ) {
-        let type = self
-        completion( [] as aType, nil, type )
+    public func isAssociatedWithServerDoc() -> Bool {
+        return docId != nil
     }
+    
+    
+//    public static func query( predicate: String, completion: ([FullStackObject], String?, Any.Type) -> () ) {
+//        let type = self
+//        completion( [], nil, type )
+//    }
     
     public typealias FullStackString = FullStackProperty<String>
     public typealias FullStackInt = FullStackProperty<Int>
@@ -95,14 +116,25 @@ public class FullStackObjectClass {
 
 
 
+// end "library"
+
+
 
 public class User: FullStackObject {
+    
     // setup
     static public var databaseCollectionName = "User"
     
     // properties
     public var username = FullStackString( databasePropertyName: "username")
-    public var superPower = FullStackString( databasePropertyName: "superPower").deprecated()
+        .setPublicPermission(permissions: [.read,.update])
+    public var superPower = FullStackString( databasePropertyName: "superPower")
+        .deprecated()
+        .setPublicPermission(permissions: [.read])
+    
+    
+//        .neverTwoOf("fly")
+//        .never("")
     
     public init(username: String) {
 
@@ -113,21 +145,21 @@ public class User: FullStackObject {
 
 
 func aTest() {
-    User.query( predicate: "usersname like \"hink\"") { results, error, aType in
-        print(aType)
-        if let listOfUsers = results as? [User] {
-            print(listOfUsers)
-        }
-    }
+//    User.query( predicate: "usersname like \"hink\"") { results, error, aType in
+//        print(aType)
+//        if let listOfUsers = results as? [User] {
+//            print(listOfUsers)
+//        }
+//    }
 }
 
 
-
-let something = aTest()
-
-public class User2: FullStackObject {
-    // setup
-    static public var databaseCollectionName = "User"
-
-}
-let test2 = User2.query( predicate: "some string")
+//
+//let something = aTest()
+//
+//public class User2: FullStackObject {
+//    // setup
+//    static public var databaseCollectionName = "User"
+//
+//}
+//let test2 = User2.query( predicate: "some string")

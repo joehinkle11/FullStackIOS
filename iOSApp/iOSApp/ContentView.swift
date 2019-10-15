@@ -12,7 +12,12 @@ import SharedApp2
 var stuff = User(username: "asdf" )
 
 
-let test: [User] = User.query( predicate: "asdf")
+//let test: [User] = User.query( predicate: "asdf")
+
+
+let user = User(username: "john")
+//user.superPower = "asd"
+
 
 struct ContentView: View {
     var body: some View {
