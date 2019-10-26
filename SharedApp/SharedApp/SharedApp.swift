@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 public typealias FullStackObject = FullStackObjectClass & FullStackObjectPrototype
 
 public protocol FullStackObjectPrototype {
@@ -163,3 +164,12 @@ func aTest() {
 //
 //}
 //let test2 = User2.query( predicate: "some string")
+
+
+
+
+//extension Optional where Wrapped == String {
+//  var isBlank: Bool {
+//    return self?.isBlank ?? true
+//  }
+//}

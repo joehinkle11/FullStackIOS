@@ -11,6 +11,8 @@
 		9F3D6E8A235164AE00E1DA58 /* SharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F75A50923514C6C0090A718 /* SharedApp.swift */; };
 		9F75A50323514C1F0090A718 /* SharedApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F75A50123514C1F0090A718 /* SharedApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F75A50A23514C6C0090A718 /* SharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F75A50923514C6C0090A718 /* SharedApp.swift */; };
+		9FF6F85B236356A8006A9941 /* MongoDbDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6F85A236356A8006A9941 /* MongoDbDelegate.swift */; };
+		9FF6F85E23635B17006A9941 /* MongoDbDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6F85A236356A8006A9941 /* MongoDbDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,7 @@
 		9F75A50123514C1F0090A718 /* SharedApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedApp.h; sourceTree = "<group>"; };
 		9F75A50223514C1F0090A718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F75A50923514C6C0090A718 /* SharedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedApp.swift; sourceTree = "<group>"; };
+		9FF6F85A236356A8006A9941 /* MongoDbDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoDbDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,7 @@
 			children = (
 				9F75A50123514C1F0090A718 /* SharedApp.h */,
 				9F75A50923514C6C0090A718 /* SharedApp.swift */,
+				9FF6F85A236356A8006A9941 /* MongoDbDelegate.swift */,
 				9F75A50223514C1F0090A718 /* Info.plist */,
 			);
 			path = SharedApp;
@@ -124,6 +128,8 @@
 			dependencies = (
 			);
 			name = SharedApp;
+			packageProductDependencies = (
+			);
 			productName = SharedApp;
 			productReference = 9F75A4FE23514C1F0090A718 /* SharedApp.framework */;
 			productType = "com.apple.product-type.framework";
@@ -152,6 +158,8 @@
 				Base,
 			);
 			mainGroup = 9F75A4F423514C1F0090A718;
+			packageReferences = (
+			);
 			productRefGroup = 9F75A4FF23514C1F0090A718 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -184,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF6F85E23635B17006A9941 /* MongoDbDelegate.swift in Sources */,
 				9F3D6E8A235164AE00E1DA58 /* SharedApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F75A50A23514C6C0090A718 /* SharedApp.swift in Sources */,
+				9FF6F85B236356A8006A9941 /* MongoDbDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

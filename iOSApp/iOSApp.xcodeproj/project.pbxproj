@@ -15,6 +15,7 @@
 		9F75A4ED23514BB30090A718 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F75A4EB23514BB30090A718 /* LaunchScreen.storyboard */; };
 		9FF090A323516BDD00194A68 /* SharedApp2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF090A223516BDD00194A68 /* SharedApp2.framework */; };
 		9FF090A423516BDD00194A68 /* SharedApp2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF090A223516BDD00194A68 /* SharedApp2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FF6F85D23635AA0006A9941 /* SimulatedServerDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6F85C23635AA0006A9941 /* SimulatedServerDb.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,7 @@
 		9F75A4EC23514BB30090A718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F75A4EE23514BB30090A718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FF090A223516BDD00194A68 /* SharedApp2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SharedApp2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FF6F85C23635AA0006A9941 /* SimulatedServerDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedServerDb.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				9F75A4E023514BB20090A718 /* AppDelegate.swift */,
 				9F75A4E223514BB20090A718 /* SceneDelegate.swift */,
 				9F75A4E423514BB20090A718 /* ContentView.swift */,
+				9FF6F85C23635AA0006A9941 /* SimulatedServerDb.swift */,
 				9F75A4E623514BB30090A718 /* Assets.xcassets */,
 				9F75A4EB23514BB30090A718 /* LaunchScreen.storyboard */,
 				9F75A4EE23514BB30090A718 /* Info.plist */,
@@ -177,6 +180,7 @@
 				9F75A4E123514BB20090A718 /* AppDelegate.swift in Sources */,
 				9F75A4E323514BB20090A718 /* SceneDelegate.swift in Sources */,
 				9F75A4E523514BB20090A718 /* ContentView.swift in Sources */,
+				9FF6F85D23635AA0006A9941 /* SimulatedServerDb.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
