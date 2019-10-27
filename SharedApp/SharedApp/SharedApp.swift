@@ -117,8 +117,6 @@ public class FullStackObjectClass {
 
 
 
-// end "library"
-
 
 
 public class User: FullStackObject {
@@ -133,10 +131,6 @@ public class User: FullStackObject {
         .deprecated()
         .setPublicPermission(permissions: [.read])
     
-    
-//        .neverTwoOf("fly")
-//        .never("")
-    
     public init(username: String) {
 
     }
@@ -144,32 +138,3 @@ public class User: FullStackObject {
     
 }
 
-
-func aTest() {
-//    User.query( predicate: "usersname like \"hink\"") { results, error, aType in
-//        print(aType)
-//        if let listOfUsers = results as? [User] {
-//            print(listOfUsers)
-//        }
-//    }
-}
-
-
-//
-//let something = aTest()
-//
-//public class User2: FullStackObject {
-//    // setup
-//    static public var databaseCollectionName = "User"
-//
-//}
-//let test2 = User2.query( predicate: "some string")
-
-
-
-
-//extension Optional where Wrapped == String {
-//  var isBlank: Bool {
-//    return self?.isBlank ?? true
-//  }
-//}
