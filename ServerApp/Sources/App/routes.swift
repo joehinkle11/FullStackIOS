@@ -1,7 +1,6 @@
 import Crypto
 import Vapor
 import SharedApp
-import MongoKitten
 
 /// Register your application's routes here.
 public func routes(_ router: Router) throws {

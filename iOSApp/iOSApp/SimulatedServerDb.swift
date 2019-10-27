@@ -6,7 +6,6 @@
 //  Copyright © 2019 Joseph Hinkle. All rights reserved.
 //
 
-import Foundation
 import SharedApp2
 import CouchbaseLiteSwift
 

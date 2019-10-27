@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9F3D6E88235164AE00E1DA58 /* SharedApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F75A50123514C1F0090A718 /* SharedApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F3D6E8A235164AE00E1DA58 /* SharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F75A50923514C6C0090A718 /* SharedApp.swift */; };
+		9F67EE0B2366359000AC68B1 /* SharedAppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67EE0A2366359000AC68B1 /* SharedAppConfig.swift */; };
 		9F75A50323514C1F0090A718 /* SharedApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F75A50123514C1F0090A718 /* SharedApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F75A50A23514C6C0090A718 /* SharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F75A50923514C6C0090A718 /* SharedApp.swift */; };
 		9FF6F85B236356A8006A9941 /* MongoDbDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6F85A236356A8006A9941 /* MongoDbDelegate.swift */; };
@@ -19,6 +20,7 @@
 		9F3D6E852351639300E1DA58 /* SharedApp copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SharedApp copy-Info.plist"; path = "/Users/josephhinkle/FullStackIOS/SharedApp/SharedApp copy-Info.plist"; sourceTree = "<absolute>"; };
 		9F3D6E90235164AE00E1DA58 /* SharedApp2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedApp2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3D6E91235164AE00E1DA58 /* SharedApp copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SharedApp copy2-Info.plist"; path = "/Users/josephhinkle/FullStackIOS/SharedApp/SharedApp copy2-Info.plist"; sourceTree = "<absolute>"; };
+		9F67EE0A2366359000AC68B1 /* SharedAppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedAppConfig.swift; sourceTree = "<group>"; };
 		9F75A4FE23514C1F0090A718 /* SharedApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F75A50123514C1F0090A718 /* SharedApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedApp.h; sourceTree = "<group>"; };
 		9F75A50223514C1F0090A718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				9F75A50123514C1F0090A718 /* SharedApp.h */,
 				9F75A50923514C6C0090A718 /* SharedApp.swift */,
+				9F67EE0A2366359000AC68B1 /* SharedAppConfig.swift */,
 				9FF6F85A236356A8006A9941 /* MongoDbDelegate.swift */,
 				9F75A50223514C1F0090A718 /* Info.plist */,
 			);
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F75A50A23514C6C0090A718 /* SharedApp.swift in Sources */,
+				9F67EE0B2366359000AC68B1 /* SharedAppConfig.swift in Sources */,
 				9FF6F85B236356A8006A9941 /* MongoDbDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
