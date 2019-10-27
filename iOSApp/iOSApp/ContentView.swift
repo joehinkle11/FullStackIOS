@@ -22,9 +22,8 @@ struct ContentView: View {
     @State private var documentTypeSelectedId = 0
     @State private var documentSelected: FullStackObject?
     
-    let documentOptions: [(String, FullStackObject.Type?)] = [
-        ("None", nil),
-        ("User", User.self)
+    let documentOptions: [FullStackObject.Type] = [
+        User.self
     ]
     
     var body: some View {
@@ -33,84 +32,83 @@ struct ContentView: View {
                 .bold()
                 .font(.largeTitle)
             Divider()
+            Text("Select a document type")
+                .font(.title)
             Picker(selection: $documentTypeSelectedId, label: Text("Select a document")) {
                 ForEach(0 ..< documentOptions.count) {
-                    Text(self.documentOptions[$0].0).tag($0)
+                    Text(String(describing: self.documentOptions[$0])).tag($0)
                 }
             }
+                .pickerStyle(SegmentedPickerStyle())
+            Divider()
             selectionView()
+            Spacer()
         }
     }
     
     func selectionView() -> AnyView {
-        if let selectedDocumentType = documentOptions[documentTypeSelectedId].1 {
-            let selectedDocumentName = documentOptions[documentTypeSelectedId].0
-            return AnyView(VStack (alignment: .leading, spacing: 15) {
-                Text("Selection: \(selectedDocumentName)")
-                    .font(.title)
-                
-                Text("databaseCollectionName: \"\(selectedDocumentType.databaseCollectionName)\"")
-                
+        let selectedDocumentType = documentOptions[documentTypeSelectedId]
+        let selectedDocumentName = String(describing: selectedDocumentType)
+        return AnyView(VStack (alignment: .leading, spacing: 15) {
+            Text("Selection: \(selectedDocumentName)")
+                .font(.title)
+            
+            Text("databaseCollectionName: \"\(selectedDocumentType.databaseCollectionName)\"")
+            
 //                TextField("username", text: $username)
 //                    .frame(width: 100)
-                HStack (alignment: .center, spacing: 10) {
-                    Button(action: {
+            HStack (alignment: .center, spacing: 10) {
+                Button(action: {
 //                        self.message = "test"
-                    }) {
-                        Text("Create")
-                        .fontWeight(.bold)
-                        .padding()
-                        .background((documentSelected == nil) ? Color.green.opacity(0.5) : Color.green)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-                        .padding(10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 40)
-                                .stroke((documentSelected == nil) ? Color.green.opacity(0.5) : Color.green, lineWidth: 5)
-                        )
-                    }
-                    .disabled(documentSelected == nil)
-                    
-                    Button(action: {
+                }) {
+                    Text("Create")
+                    .fontWeight(.bold)
+                    .padding()
+                    .background((documentSelected == nil) ? Color.green.opacity(0.5) : Color.green)
+                    .cornerRadius(40)
+                    .foregroundColor(.white)
+                    .padding(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 40)
+                            .stroke((documentSelected == nil) ? Color.green.opacity(0.5) : Color.green, lineWidth: 5)
+                    )
+                }
+                .disabled(documentSelected == nil)
+                
+                Button(action: {
 //                        self.message = "test"
-                    }) {
-                        Text("Query")
-                        .fontWeight(.bold)
-                        .padding()
-                        .background(Color.purple)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-                        .padding(10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 40)
-                                .stroke(Color.purple, lineWidth: 5)
-                        )
-                    }
-                    
-                    Button(action: {
-//                        self.message = "test"
-                    }) {
-                        Text("Delete")
-                        .fontWeight(.bold)
-                        .padding()
-                        .background((documentSelected == nil) ? Color.red.opacity(0.5) : Color.red)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-                        .padding(10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 40)
-                                .stroke((documentSelected == nil) ? Color.red.opacity(0.5) : Color.red, lineWidth: 5)
-                        )
-                    }
-                    .disabled(documentSelected == nil)
+                }) {
+                    Text("Query")
+                    .fontWeight(.bold)
+                    .padding()
+                    .background(Color.purple)
+                    .cornerRadius(40)
+                    .foregroundColor(.white)
+                    .padding(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 40)
+                            .stroke(Color.purple, lineWidth: 5)
+                    )
                 }
                 
-                
-                Spacer()
-            })
-        } else {
-            return AnyView(Spacer())
-        }
+                Button(action: {
+//                        self.message = "test"
+                }) {
+                    Text("Delete")
+                    .fontWeight(.bold)
+                    .padding()
+                    .background((documentSelected == nil) ? Color.red.opacity(0.5) : Color.red)
+                    .cornerRadius(40)
+                    .foregroundColor(.white)
+                    .padding(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 40)
+                            .stroke((documentSelected == nil) ? Color.red.opacity(0.5) : Color.red, lineWidth: 5)
+                    )
+                }
+                .disabled(documentSelected == nil)
+            }
+        })
     }
 }
 

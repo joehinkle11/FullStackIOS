@@ -93,7 +93,10 @@ public class FullStackObjectClass {
     }
     
     //
-    private var docId: String?
+    private var _docId: String?
+    public var docId: String? {
+        return _docId
+    }
     
     //
     public init() {
@@ -101,7 +104,7 @@ public class FullStackObjectClass {
     }
     
     public func isAssociatedWithServerDoc() -> Bool {
-        return docId != nil
+        return _docId != nil
     }
     
     
