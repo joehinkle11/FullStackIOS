@@ -7,10 +7,18 @@
 //
 
 import UIKit
+import SharedApp2
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        // Register server database with Shared App
+        SharedAppConfig.shared.setDb( serverDb: SimulatedServerDb() )
+        
+        return true
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

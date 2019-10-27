@@ -10,6 +10,7 @@
 		9F3D6E88235164AE00E1DA58 /* SharedApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F75A50123514C1F0090A718 /* SharedApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F3D6E8A235164AE00E1DA58 /* SharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F75A50923514C6C0090A718 /* SharedApp.swift */; };
 		9F67EE0B2366359000AC68B1 /* SharedAppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67EE0A2366359000AC68B1 /* SharedAppConfig.swift */; };
+		9F67EE0D236638AB00AC68B1 /* SharedAppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67EE0A2366359000AC68B1 /* SharedAppConfig.swift */; };
 		9F75A50323514C1F0090A718 /* SharedApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F75A50123514C1F0090A718 /* SharedApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F75A50A23514C6C0090A718 /* SharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F75A50923514C6C0090A718 /* SharedApp.swift */; };
 		9FF6F85B236356A8006A9941 /* MongoDbDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6F85A236356A8006A9941 /* MongoDbDelegate.swift */; };
@@ -197,6 +198,7 @@
 			files = (
 				9FF6F85E23635B17006A9941 /* MongoDbDelegate.swift in Sources */,
 				9F3D6E8A235164AE00E1DA58 /* SharedApp.swift in Sources */,
+				9F67EE0D236638AB00AC68B1 /* SharedAppConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
