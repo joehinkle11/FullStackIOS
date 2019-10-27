@@ -18,9 +18,9 @@ let user = User(username: "john")
 
 
 struct ContentView: View {
-    @State var message = ""
-    @State var username = "some"
-    @State private var selection = 0
+    
+    @State private var documentTypeSelectedId = 0
+    @State private var documentSelected: FullStackObject?
     
     let documentOptions: [(String, FullStackObject.Type?)] = [
         ("None", nil),
@@ -31,46 +31,77 @@ struct ContentView: View {
         VStack {
             Text("Welcome to the Full Stack iOS demo!")
                 .bold()
-                .font(.title)
+                .font(.largeTitle)
             Divider()
-            Spacer()
-            
-            Picker(selection: $selection, label: Text("Select a document")) {
+            Picker(selection: $documentTypeSelectedId, label: Text("Select a document")) {
                 ForEach(0 ..< documentOptions.count) {
                     Text(self.documentOptions[$0].0).tag($0)
                 }
             }
-            
             selectionView()
         }
     }
     
     func selectionView() -> AnyView {
-        if let selectedDocumentType = documentOptions[selection].1 {
+        if let selectedDocumentType = documentOptions[documentTypeSelectedId].1 {
+            let selectedDocumentName = documentOptions[documentTypeSelectedId].0
             return AnyView(VStack {
-                Text("Selection: \(documentOptions[selection].0)")
-                
-                TextField("username", text: $username)
-                    .frame(width: 100)
-                Button(action: {
-                    self.message = "test"
-                }) {
-                    Text("Add document!")
-                    .fontWeight(.bold)
+                Text("Selection: \(selectedDocumentName)")
                     .font(.title)
-                    .padding()
-                    .background(Color.purple)
-                    .cornerRadius(40)
-                    .foregroundColor(.white)
-                    .padding(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(Color.purple, lineWidth: 5)
-                    )
+                
+                Text("databaseCollectionName: \"\(selectedDocumentType.databaseCollectionName)\"")
+                
+//                TextField("username", text: $username)
+//                    .frame(width: 100)
+                HStack (alignment: .center, spacing: 10) {
+                    Button(action: {
+//                        self.message = "test"
+                    }) {
+                        Text("Create")
+                        .fontWeight(.bold)
+                        .padding()
+                        .background(Color.green)
+                        .cornerRadius(40)
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 40)
+                                .stroke(Color.green, lineWidth: 5)
+                        )
+                    }
+                    Button(action: {
+//                        self.message = "test"
+                    }) {
+                        Text("Query")
+                        .fontWeight(.bold)
+                        .padding()
+                        .background(Color.purple)
+                        .cornerRadius(40)
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 40)
+                                .stroke(Color.purple, lineWidth: 5)
+                        )
+                    }
+                    Button(action: {
+//                        self.message = "test"
+                    }) {
+                        Text("Delete")
+                        .fontWeight(.bold)
+                        .padding()
+                        .background(Color.red)
+                        .cornerRadius(40)
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 40)
+                                .stroke(Color.red, lineWidth: 5)
+                        )
+                    }
                 }
                 
                 
-                Text(message)
                 Spacer()
             })
         } else {
