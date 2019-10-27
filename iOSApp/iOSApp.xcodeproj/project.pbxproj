@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F67EDF9236526E600AC68B1 /* CouchbaseLiteSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F67EDF7236526BC00AC68B1 /* CouchbaseLiteSwift.framework */; };
+		9F67EDFA236526E600AC68B1 /* CouchbaseLiteSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F67EDF7236526BC00AC68B1 /* CouchbaseLiteSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F75A4E123514BB20090A718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F75A4E023514BB20090A718 /* AppDelegate.swift */; };
 		9F75A4E323514BB20090A718 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F75A4E223514BB20090A718 /* SceneDelegate.swift */; };
 		9F75A4E523514BB20090A718 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F75A4E423514BB20090A718 /* ContentView.swift */; };
@@ -25,6 +27,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9F67EDFA236526E600AC68B1 /* CouchbaseLiteSwift.framework in Embed Frameworks */,
 				9FF090A423516BDD00194A68 /* SharedApp2.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -33,6 +36,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F67EDF7236526BC00AC68B1 /* CouchbaseLiteSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CouchbaseLiteSwift.framework; sourceTree = "<group>"; };
 		9F75A4DD23514BB20090A718 /* iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F75A4E023514BB20090A718 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F75A4E223514BB20090A718 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F67EDF9236526E600AC68B1 /* CouchbaseLiteSwift.framework in Frameworks */,
 				9FF090A323516BDD00194A68 /* SharedApp2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +65,7 @@
 		9F75A4D423514BB20090A718 = {
 			isa = PBXGroup;
 			children = (
+				9F67EDF7236526BC00AC68B1 /* CouchbaseLiteSwift.framework */,
 				9F75A4DF23514BB20090A718 /* iOSApp */,
 				9F75A4DE23514BB20090A718 /* Products */,
 				9F75A50B23514D270090A718 /* Frameworks */,
@@ -319,6 +325,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iOSApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = iOSApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -338,6 +348,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iOSApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = iOSApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

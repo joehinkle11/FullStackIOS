@@ -8,6 +8,7 @@
 
 import Foundation
 import SharedApp2
+import CouchbaseLiteSwift
 
 class SimulatedServerDb: MongoDbDelegate {
     
