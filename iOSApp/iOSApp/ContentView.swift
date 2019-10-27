@@ -45,7 +45,7 @@ struct ContentView: View {
     func selectionView() -> AnyView {
         if let selectedDocumentType = documentOptions[documentTypeSelectedId].1 {
             let selectedDocumentName = documentOptions[documentTypeSelectedId].0
-            return AnyView(VStack {
+            return AnyView(VStack (alignment: .leading, spacing: 15) {
                 Text("Selection: \(selectedDocumentName)")
                     .font(.title)
                 
@@ -60,15 +60,17 @@ struct ContentView: View {
                         Text("Create")
                         .fontWeight(.bold)
                         .padding()
-                        .background(Color.green)
+                        .background((documentSelected == nil) ? Color.green.opacity(0.5) : Color.green)
                         .cornerRadius(40)
                         .foregroundColor(.white)
                         .padding(10)
                         .overlay(
                             RoundedRectangle(cornerRadius: 40)
-                                .stroke(Color.green, lineWidth: 5)
+                                .stroke((documentSelected == nil) ? Color.green.opacity(0.5) : Color.green, lineWidth: 5)
                         )
                     }
+                    .disabled(documentSelected == nil)
+                    
                     Button(action: {
 //                        self.message = "test"
                     }) {
@@ -84,21 +86,23 @@ struct ContentView: View {
                                 .stroke(Color.purple, lineWidth: 5)
                         )
                     }
+                    
                     Button(action: {
 //                        self.message = "test"
                     }) {
                         Text("Delete")
                         .fontWeight(.bold)
                         .padding()
-                        .background(Color.red)
+                        .background((documentSelected == nil) ? Color.red.opacity(0.5) : Color.red)
                         .cornerRadius(40)
                         .foregroundColor(.white)
                         .padding(10)
                         .overlay(
                             RoundedRectangle(cornerRadius: 40)
-                                .stroke(Color.red, lineWidth: 5)
+                                .stroke((documentSelected == nil) ? Color.red.opacity(0.5) : Color.red, lineWidth: 5)
                         )
                     }
+                    .disabled(documentSelected == nil)
                 }
                 
                 
