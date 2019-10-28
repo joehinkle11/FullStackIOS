@@ -20,6 +20,8 @@ struct ContentView: View {
         User.self
     ]
     
+    let things = User.getListOfFullStackProperties()
+    
     var body: some View {
         VStack {
             Text("Welcome to the Full Stack iOS demo!")

@@ -117,20 +117,21 @@ public class FullStackObjectClass {
     }
     
     
-    static func getListOfFullStackProperties() -> FullStackProperties {
+    public static func getListOfFullStackProperties() -> FullStackProperties {
         let temp = Self()
         var strings: [FullStackString] = []
         var ints: [FullStackInt] = []
         var bools: [FullStackBool] = []
         
         let mirror = Mirror(reflecting: temp)
-        let things = mirror.children.compactMap{ $0 }
-        for thing in things {
-            if let val = thing.value as? FullStackString {
+        
+        let anyProperties = mirror.children.compactMap{ $0 }
+        for anyProperty in anyProperties {
+            if let val = anyProperty.value as? FullStackString {
                 strings.append(val)
-            } else if let val = thing.value as? FullStackInt {
+            } else if let val = anyProperty.value as? FullStackInt {
                 ints.append(val)
-            } else if let val = thing.value as? FullStackBool {
+            } else if let val = anyProperty.value as? FullStackBool {
                 bools.append(val)
             }
         }
@@ -147,10 +148,6 @@ public class FullStackObjectClass {
 //        completion( [], nil, type )
 //    }
     
-    
-    deinit {
-        print("denit!")
-    }
 }
 
 
