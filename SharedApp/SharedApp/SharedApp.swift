@@ -151,6 +151,8 @@ public class FullStackObjectClass {
     }
     
     public static func query( type: FullStackObjectPrototype.Type, predicate: String, completion: ([FullStackObjectPrototype]) -> () ) {
+        let databaseCollectionName = type.databaseCollectionName
+        // look through db collection "databaseCollectionName" for documents matching the predicate then call the completion
         completion( [type.init()] )
     }
     
