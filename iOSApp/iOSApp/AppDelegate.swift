@@ -16,6 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Register server database with Shared App
         SharedAppConfig.shared.setDb( serverDb: SimulatedServerDb() )
+//
+//        FullStackObjectClass.query( type: [User.self,PowerUp.self].first!, predicate: "" ) { list in
+////                    if let list2 = list as? [User] {
+////                        print(list2)
+////                    }
+////                    print(type(of: list))
+//////                    print(list is )
+//            print(list)
+//            print("done")
+//        }
         
         return true
     }

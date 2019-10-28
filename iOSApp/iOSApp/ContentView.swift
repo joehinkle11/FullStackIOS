@@ -13,10 +13,12 @@ import SharedApp2
 
 struct ContentView: View {
     
+    let documentOptions: [FullStackObject.Type] = [User.self, PowerUp.self]
     @State private var documentTypeSelectedId = 0
+    
+    @State private var queryResults: [FullStackObject]?
     @State private var documentSelected: FullStackObject?
     
-    let documentOptions: [FullStackObject.Type] = [User.self, PowerUp.self]
     
     var body: some View {
         VStack {
@@ -59,15 +61,23 @@ struct ContentView: View {
     }
     
     func selectionView() -> AnyView {
-        let selectedDocumentType = documentOptions[documentTypeSelectedId]
+        let selectedDocumentType: FullStackObject.Type = documentOptions[documentTypeSelectedId]
         return AnyView(VStack (spacing: 15) {
-            Text("Query for documents in \"\(selectedDocumentType.databaseCollectionName)\"")
+            Text("Query for docs in \"\(selectedDocumentType.databaseCollectionName)\"")
                 .font(.title)
             
 //            TextField("", text: <#T##Binding<String>#>)
             
             Button(action: {
-//                        self.message = "test"
+                FullStackObjectClass.query( type: selectedDocumentType, predicate: "" ) { list in
+                    if let list2 = list as? [User] {
+                        print(list2)
+                    }
+//                    print(type(of: list))
+////                    print(list is )
+                    print(list)
+                    print("done")
+                }
             }) {
                 Text("Query")
                 .fontWeight(.bold)
@@ -86,7 +96,6 @@ struct ContentView: View {
             
             HStack (alignment: .center, spacing: 10) {
                 Button(action: {
-//                        self.message = "test"
                 }) {
                     Text("Create")
                     .fontWeight(.bold)
@@ -103,7 +112,6 @@ struct ContentView: View {
                 .disabled(documentSelected == nil)
                 
                 Button(action: {
-//                        self.message = "test"
                 }) {
                     Text("Delete")
                     .fontWeight(.bold)

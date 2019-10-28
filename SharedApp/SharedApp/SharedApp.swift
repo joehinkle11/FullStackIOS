@@ -9,14 +9,21 @@
 import Foundation
 
 
+
 public typealias FullStackObject = FullStackObjectClass & FullStackObjectPrototype
 
 public protocol FullStackObjectPrototype {
+    init()
     static var databaseCollectionName: String { get }
 }
 
-//extension FullStackObjectPrototype {
-//}
+extension FullStackObjectPrototype {
+    public static func query( predicate: String, completion: ([Self]) -> () ) {
+        FullStackObjectClass.query( type: Self.self, predicate: "" ) { list in
+            completion(list)
+        }
+    }
+}
 
 public enum Permissions {
     case read
@@ -25,7 +32,7 @@ public enum Permissions {
     case delete
 }
 
-public class FullStackProperty<T: Any> {
+public class FullStackProperty<T> {
     
     enum PropertyAvailability {
         case available
@@ -143,14 +150,20 @@ public class FullStackObjectClass {
         return _docId != nil
     }
     
+    public static func query<T: FullStackObjectPrototype>( type: T.Type, predicate: String, completion: ([T]) -> () ) {
+        completion( [T()] )
+    }
+    public static func query( type: FullStackObjectPrototype.Type, predicate: String, completion: ([FullStackObjectPrototype]) -> () ) {
+        completion( [type.init()] )
+    }
     
-//    public static func query( predicate: String, completion: ([FullStackObject], String?, Any.Type) -> () ) {
-//        let type = self
-//        completion( [], nil, type )
-//    }
     
 }
 
 
 
+public struct Query<T: FullStackObjectClass> {
+    public let db: T
+    public let matchingProperties: FullStackProperties
+}
 
