@@ -12,7 +12,7 @@ My basic contention is that most wasted time in full stack development comes fro
   
   - One developer screwing up another's test because they deployed the server in the dev enviroment which broke that other developer's test. I don't know if my personal experience of this happening is just because my team was bad...haha! But regardless, I hope this project would enable each developer to simluate the entire full stack on their local machine, so there won't be any shared dependencies between developers.
    
-   -
+   - Debugging server code by resorting to server logs after making calls from your frontend code. This is a nightmare from what I've experience, so I hope this project will allow developers to have the debugger step through their full stack line-by-line without having to dig through painful logs.
   
   
 Problems my project will not address
