@@ -1,6 +1,6 @@
 # FullStackIOS
 
-This is an experimental idea where the "full stack" of an iOS app is developed by inheriting from one class shared by the front end (iOS code) and backend (server code) or the app.
+This is an experimental idea where the "full stack" of an iOS app is developed by inheriting from one class called `FullStackObject`. Subclasses of this class are basically data models with super-full-stack-powers. All subclasses of `FullStackObject` should be put inside the `SharedApp` project in your Xcode workspace. Then your `iOS App` project (frontend) and `ServerApp` project (backend) will read your data models in `SharedApp` to automatically handle all things full stack.
 
 I have no idea if this project will work, but I have a hunch, so I'm just coding it to explore. My hopes is that it will remove a lot a wasted development time when making full stack apps. 
 
