@@ -9,7 +9,7 @@
 import Foundation
 
 
-public protocol MongoDbDelegate {
+public protocol MongoDbDelegate: class {
     
     
 }
