@@ -6,11 +6,13 @@ I have no idea if this project will work, but I have a hunch, so I'm just coding
 
 My basic contention is that most wasted time in full stack development comes from what I call "changing environment contexts." For example, switching from Xcode to build my iOS frontend to VSCode to build my Firebase backend (server). Here are a list of time-wasters that come with changing environment contexts.
  
- - Using strings as keys which need to be identical on the frontend and server. If a string is mistyped, the IDE does not through an error. Time can be wasted while the developer scratches their head until they realized they made a spelling mistake. I hope this project will all you to use typed objects between your frontend and server function calls and databases calls so that you get compile-time errors. I hope that REST APIs (which will require strings...like the use of json) will be automatically generated on deployment.
+ - Using strings as keys which need to be identical on the frontend and server. If a string is mistyped, the IDE does not throw an error. Time can be wasted while the developer scratches their head until they realized they made a spelling mistake. I hope this project will allow you to use typed objects between your frontend and server function calls and databases calls so that you get compile-time errors. I hope that REST APIs (which will require strings...like the use of json) will be automatically generated on deployment.
   
   - Rewriting the same data model in multiple contexts. i.e. writing your data model for an object called "Dog" in you iOS project in Xcode, your Firebase project in VSCode, and in your Firestore database on Firebase's website. I hope this project would allow you to have to only write your data model in one place as a Swift class which automatically deploys to all your projects and databases.
   
   - One developer screwing up another's test because they deployed the server in the dev enviroment which broke that other developer's test. I don't know if my personal experience of this happening is just because my team was bad...haha! But regardless, I hope this project would enable each developer to simluate the entire full stack on their local machine, so there won't be any shared dependencies between developers.
+   
+   -
   
   
 Problems my project will not address
