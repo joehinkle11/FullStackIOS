@@ -16,9 +16,7 @@ struct ContentView: View {
     @State private var documentTypeSelectedId = 0
     @State private var documentSelected: FullStackObject?
     
-    let documentOptions: [FullStackObject.Type] = [
-        User.self
-    ]
+    let documentOptions: [FullStackObject.Type] = [User.self, PowerUp.self]
     
     var body: some View {
         VStack {
