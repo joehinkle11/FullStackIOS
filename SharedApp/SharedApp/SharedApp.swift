@@ -20,7 +20,7 @@ public protocol FullStackObjectPrototype {
 extension FullStackObjectPrototype {
     public static func query( predicate: String, completion: ([Self]) -> () ) {
         FullStackObjectClass.query( type: Self.self, predicate: "" ) { list in
-            completion(list)
+            completion(list as! [Self])
         }
     }
 }
@@ -150,9 +150,6 @@ public class FullStackObjectClass {
         return _docId != nil
     }
     
-    public static func query<T: FullStackObjectPrototype>( type: T.Type, predicate: String, completion: ([T]) -> () ) {
-        completion( [T()] )
-    }
     public static func query( type: FullStackObjectPrototype.Type, predicate: String, completion: ([FullStackObjectPrototype]) -> () ) {
         completion( [type.init()] )
     }

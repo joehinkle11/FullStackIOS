@@ -78,6 +78,10 @@ struct ContentView: View {
                     print(list)
                     print("done")
                 }
+                User.query( predicate: "" ) { list in
+                    print(list)
+                    print("done")
+                }
             }) {
                 Text("Query")
                 .fontWeight(.bold)
