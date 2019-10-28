@@ -20,8 +20,6 @@ struct ContentView: View {
         User.self
     ]
     
-    let things = User.getListOfFullStackProperties()
-    
     var body: some View {
         VStack {
             Text("Welcome to the Full Stack iOS demo!")
@@ -36,10 +34,30 @@ struct ContentView: View {
                 }
             }
                 .pickerStyle(SegmentedPickerStyle())
+            descriptionView()
             Divider()
             selectionView()
             Spacer()
         }
+    }
+    
+    func descriptionView() -> AnyView {
+        let selectedDocumentType = documentOptions[documentTypeSelectedId]
+        let properties = selectedDocumentType.getListOfFullStackProperties()
+        let strings = String(describing: properties.strings.map { property -> String in
+            return property.databasePropertyName
+        })
+        let ints = String(describing: properties.bools.map { property -> String in
+            return property.databasePropertyName
+        })
+        let bools = String(describing: properties.bools.map { property -> String in
+            return property.databasePropertyName
+        })
+        return AnyView(VStack (alignment: .leading, spacing: 15) {
+            Text("Strings:\t\(strings)")
+            Text("Ints:\t\t\(ints)")
+            Text("Bools:\t\t\(bools)")
+        })
     }
     
     func selectionView() -> AnyView {
@@ -49,7 +67,6 @@ struct ContentView: View {
                 .font(.title)
             
 //            TextField("", text: <#T##Binding<String>#>)
-            
             
             Button(action: {
 //                        self.message = "test"

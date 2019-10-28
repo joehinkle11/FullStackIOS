@@ -35,7 +35,8 @@ public class FullStackProperty<T: Any> {
         case invisible
     }
    
-    private let databasePropertyName: String
+    private let _databasePropertyName: String
+    public var databasePropertyName: String { return _databasePropertyName }
     private let previousDatabasePropertyNames: [String] = []
     private var availability: PropertyAvailability = .available
     private var publicPermissions: [Permissions] = []
@@ -44,7 +45,7 @@ public class FullStackProperty<T: Any> {
     public var value: T?
     
     public init( databasePropertyName: String ) {
-        self.databasePropertyName = databasePropertyName
+        self._databasePropertyName = databasePropertyName
     }
     
     
@@ -98,9 +99,9 @@ public typealias FullStackInt = FullStackProperty<Int>
 public typealias FullStackBool = FullStackProperty<Bool>
 
 public struct FullStackProperties {
-    var strings: [FullStackString]
-    var ints: [FullStackInt]
-    var bools: [FullStackBool]
+    public let strings: [FullStackString]
+    public let ints: [FullStackInt]
+    public let bools: [FullStackBool]
 }
 
 public class FullStackObjectClass {
