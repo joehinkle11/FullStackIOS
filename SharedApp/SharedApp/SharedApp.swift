@@ -15,82 +15,95 @@ public protocol FullStackObjectPrototype {
     static var databaseCollectionName: String { get }
 }
 
+//extension FullStackObjectPrototype {
+//}
+
+public enum Permissions {
+    case read
+    case update
+    case create
+    case delete
+}
+
+public class FullStackProperty<T: Any> {
+    
+    enum PropertyAvailability {
+        case available
+        case legacy
+        case deprecated
+        case obsolete
+        case invisible
+    }
+   
+    private let databasePropertyName: String
+    private let previousDatabasePropertyNames: [String] = []
+    private var availability: PropertyAvailability = .available
+    private var publicPermissions: [Permissions] = []
+    private var isPrimaryKey: Bool = false
+    private var isUnique: Bool = false
+    public var value: T?
+    
+    public init( databasePropertyName: String ) {
+        self.databasePropertyName = databasePropertyName
+    }
+    
+    
+    func sync( completion: (String) -> () ) {
+        completion("asdf")
+    }
+    
+    
+    ///
+    public func primaryKey() -> FullStackProperty<T> {
+        self.isPrimaryKey = true
+        self.isUnique = true
+        return self
+    }
+    
+    ///
+    public func setPublicPermission( permissions: [Permissions] ) -> FullStackProperty<T> {
+        self.publicPermissions = permissions
+        return self
+    }
+    
+    /// property is fully serviced by the backend
+    public func available() -> FullStackProperty<T> {
+        self.availability = .deprecated
+        return self
+    }
+    /// property is only serviced  by the backend when it already exists on an object in the database, and will throw warnings when used in the frontend
+    public func legacy() -> FullStackProperty<T> {
+        self.availability = .legacy
+        return self
+    }
+    /// property is fully serviced by the backend, but will throw warnings when used in the frontend
+    public func deprecated() -> FullStackProperty<T> {
+        self.availability = .deprecated
+        return self
+    }
+    /// property is never serviced by the backend, and will throw errors when used in the frontend
+    public func obsolete() -> FullStackProperty<T> {
+        self.availability = .obsolete
+        return self
+    }
+    /// property is never serviced by the backend, but will not through warnings or errors when used in the frontend
+    public func invisible() -> FullStackProperty<T> {
+        self.availability = .invisible
+        return self
+    }
+}
+
+public typealias FullStackString = FullStackProperty<String>
+public typealias FullStackInt = FullStackProperty<Int>
+public typealias FullStackBool = FullStackProperty<Bool>
+
+public struct FullStackProperties {
+    var strings: [FullStackString]
+    var ints: [FullStackInt]
+    var bools: [FullStackBool]
+}
+
 public class FullStackObjectClass {
-    
-    public enum Permissions {
-        case read
-        case update
-        case create
-        case delete
-    }
-    
-    public class FullStackProperty<T> {
-        
-        enum PropertyAvailability {
-            case available
-            case legacy
-            case deprecated
-            case obsolete
-            case invisible
-        }
-       
-        private let databasePropertyName: String
-        private let previousDatabasePropertyNames: [String] = []
-        private var availability: PropertyAvailability = .available
-        private var publicPermissions: [Permissions] = []
-        private var isPrimaryKey: Bool = false
-        private var isUnique: Bool = false
-        public var value: T?
-        
-        public init( databasePropertyName: String ) {
-            self.databasePropertyName = databasePropertyName
-        }
-        
-        
-        func sync( completion: (String) -> () ) {
-            completion("asdf")
-        }
-        
-        
-        ///
-        public func primaryKey() -> FullStackProperty<T> {
-            self.isPrimaryKey = true
-            self.isUnique = true
-            return self
-        }
-        
-        ///
-        public func setPublicPermission( permissions: [Permissions] ) -> FullStackProperty<T> {
-            self.publicPermissions = permissions
-            return self
-        }
-        
-        /// property is fully serviced by the backend
-        public func available() -> FullStackProperty<T> {
-            self.availability = .deprecated
-            return self
-        }
-        /// property is only serviced  by the backend when it already exists on an object in the database, and will throw warnings when used in the frontend
-        public func legacy() -> FullStackProperty<T> {
-            self.availability = .legacy
-            return self
-        }
-        /// property is fully serviced by the backend, but will throw warnings when used in the frontend
-        public func deprecated() -> FullStackProperty<T> {
-            self.availability = .deprecated
-            return self
-        }
-        /// property is never serviced by the backend, and will throw errors when used in the frontend
-        public func obsolete() -> FullStackProperty<T> {
-            self.availability = .obsolete
-            return self
-        }
-        /// property is never serviced by the backend, but will not through warnings or errors when used in the frontend
-        public func invisible() -> FullStackProperty<T> {
-            self.availability = .invisible
-            return self
-        }
-    }
     
     //
     private var _docId: String?
@@ -99,8 +112,29 @@ public class FullStackObjectClass {
     }
     
     //
-    public init() {
+    public required init() {
 
+    }
+    
+    
+    static func getListOfFullStackProperties() -> FullStackProperties {
+        let temp = Self()
+        var strings: [FullStackString] = []
+        var ints: [FullStackInt] = []
+        var bools: [FullStackBool] = []
+        
+        let mirror = Mirror(reflecting: temp)
+        let things = mirror.children.compactMap{ $0 }
+        for thing in things {
+            if let val = thing.value as? FullStackString {
+                strings.append(val)
+            } else if let val = thing.value as? FullStackInt {
+                ints.append(val)
+            } else if let val = thing.value as? FullStackBool {
+                bools.append(val)
+            }
+        }
+        return FullStackProperties(strings: strings, ints: ints, bools: bools)
     }
     
     public func isAssociatedWithServerDoc() -> Bool {
@@ -113,9 +147,10 @@ public class FullStackObjectClass {
 //        completion( [], nil, type )
 //    }
     
-    public typealias FullStackString = FullStackProperty<String>
-    public typealias FullStackInt = FullStackProperty<Int>
-    public typealias FullStackBool = FullStackProperty<Bool>
+    
+    deinit {
+        print("denit!")
+    }
 }
 
 
@@ -134,10 +169,10 @@ public class User: FullStackObject {
         .deprecated()
         .setPublicPermission(permissions: [.read])
     
-    public init(username: String) {
+    public var test = ""
 
+    public required init() {
+        
     }
-    
-    
 }
 

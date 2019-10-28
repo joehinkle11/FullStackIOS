@@ -9,12 +9,6 @@
 import SwiftUI
 import SharedApp2
 
-var stuff = User(username: "asdf" )
-
-
-
-let user = User(username: "john")
-//user.superPower = "asd"
 
 
 struct ContentView: View {
@@ -48,15 +42,31 @@ struct ContentView: View {
     
     func selectionView() -> AnyView {
         let selectedDocumentType = documentOptions[documentTypeSelectedId]
-        let selectedDocumentName = String(describing: selectedDocumentType)
-        return AnyView(VStack (alignment: .leading, spacing: 15) {
-            Text("Selection: \(selectedDocumentName)")
+        return AnyView(VStack (spacing: 15) {
+            Text("Query for documents in \"\(selectedDocumentType.databaseCollectionName)\"")
                 .font(.title)
             
-            Text("databaseCollectionName: \"\(selectedDocumentType.databaseCollectionName)\"")
+//            TextField("", text: <#T##Binding<String>#>)
             
-//                TextField("username", text: $username)
-//                    .frame(width: 100)
+            
+            Button(action: {
+//                        self.message = "test"
+            }) {
+                Text("Query")
+                .fontWeight(.bold)
+                .padding()
+                .background(Color.purple)
+                .cornerRadius(40)
+                .foregroundColor(.white)
+                .padding(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 40)
+                        .stroke(Color.purple, lineWidth: 5)
+                )
+            }
+            
+            Divider()
+            
             HStack (alignment: .center, spacing: 10) {
                 Button(action: {
 //                        self.message = "test"
@@ -74,22 +84,6 @@ struct ContentView: View {
                     )
                 }
                 .disabled(documentSelected == nil)
-                
-                Button(action: {
-//                        self.message = "test"
-                }) {
-                    Text("Query")
-                    .fontWeight(.bold)
-                    .padding()
-                    .background(Color.purple)
-                    .cornerRadius(40)
-                    .foregroundColor(.white)
-                    .padding(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(Color.purple, lineWidth: 5)
-                    )
-                }
                 
                 Button(action: {
 //                        self.message = "test"
