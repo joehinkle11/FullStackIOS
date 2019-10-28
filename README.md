@@ -17,7 +17,7 @@ My basic contention is that most wasted time in full stack development comes fro
   
 Problems my project will not address
 
-- Needing a shared backend (server) with multiple front ends. I don't think it's possible to fix this, but maybe something will come in the future. For now, I'm specifically targeting one frontend (native iOS) and one backend (Vapor) to explore the usefulness of this idea. If it is successful in increasing productivity enough to merit more research, then I might try to find a way to solve this problem. At the moment, I'm at a loss. This might be the reason why system is ultimately a bad one.
+- Needing a shared backend (server) with multiple front ends. I don't think it's possible to fix this, but maybe something will come in the future. For now, I'm specifically targeting one frontend (native iOS) and one backend (Vapor) to explore the usefulness of this idea. If it is successful in increasing productivity enough to merit more research, then I might try to find a way to solve this problem. At the moment, I'm at a loss. This might be the reason why this new full stack design of mine is ultimately a bad one.
 
 - Allowing backend code (on the server) to be in a different langauge than the frontend. This is just too hard and I don't want to make bindings from Swift to whatever it is someone wants. It's not worth it. I also want the Xcode debugger to step through nicely, and keeping everything in Swift is probably the best way to do that.
 
