@@ -17,6 +17,10 @@ public class PowerUp: FullStackObject {
     // properties
     public var name = FullStackString( databasePropertyName: "name")
         .setPublicPermission(permissions: [.read])
+    public var expRequired = FullStackInt( databasePropertyName: "expRequired")
+        .setPublicPermission(permissions: [.read])
+    public var isMagicType = FullStackBool( databasePropertyName: "isMagicType")
+        .setPublicPermission(permissions: [.read])
 
     public required init() {
         

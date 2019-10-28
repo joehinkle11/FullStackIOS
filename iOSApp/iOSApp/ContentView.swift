@@ -45,7 +45,7 @@ struct ContentView: View {
         let strings = String(describing: properties.strings.map { property -> String in
             return property.databasePropertyName
         })
-        let ints = String(describing: properties.bools.map { property -> String in
+        let ints = String(describing: properties.ints.map { property -> String in
             return property.databasePropertyName
         })
         let bools = String(describing: properties.bools.map { property -> String in
