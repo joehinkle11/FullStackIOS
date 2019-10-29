@@ -167,6 +167,18 @@ public class FullStackObjectClass: Identifiable {
     
     public func jsonify() -> String {
         let properties = type(of: self).getListOfFullStackProperties()
+        
+//        let test = Data()
+        AF.request("https://httpbin.org/get")
+        .responseString { response in
+            print("Response String: \(response.value)")
+        }
+        .responseJSON { response in
+            print("Response JSON: \(response.value)")
+            print(type(of: response.value))
+            print("okay")
+        }
+        
         return ""
     }
     
@@ -180,10 +192,9 @@ public class FullStackObjectClass: Identifiable {
             // fail!
         } else {
             // success
-            AF.download("https://www.google.com/")
-//            AF.request("https://httpbin.org/get").responseJSON { response in
-//                debugPrint("Response: \(response)")
-//            }
+            AF.request("https://httpbin.org/get").responseJSON { response in
+                debugPrint("Response: \(response)")
+            }
 //            SharedAppConfig.serverDb
         }
     }
