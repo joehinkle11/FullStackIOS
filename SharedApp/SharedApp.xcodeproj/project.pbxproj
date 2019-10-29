@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9F3D6E88235164AE00E1DA58 /* SharedApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F75A50123514C1F0090A718 /* SharedApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F3D6E8A235164AE00E1DA58 /* SharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F75A50923514C6C0090A718 /* SharedApp.swift */; };
+		9F463D772367D82100EB7FBC /* ServerDatabaseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6F85A236356A8006A9941 /* ServerDatabaseDelegate.swift */; };
 		9F67EE0B2366359000AC68B1 /* SharedAppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67EE0A2366359000AC68B1 /* SharedAppConfig.swift */; };
 		9F67EE0D236638AB00AC68B1 /* SharedAppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67EE0A2366359000AC68B1 /* SharedAppConfig.swift */; };
 		9F67EE102366733F00AC68B1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67EE0F2366733F00AC68B1 /* User.swift */; };
@@ -17,8 +18,7 @@
 		9F67EE142366735E00AC68B1 /* PowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67EE122366735700AC68B1 /* PowerUp.swift */; };
 		9F75A50323514C1F0090A718 /* SharedApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F75A50123514C1F0090A718 /* SharedApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F75A50A23514C6C0090A718 /* SharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F75A50923514C6C0090A718 /* SharedApp.swift */; };
-		9FF6F85B236356A8006A9941 /* MongoDbDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6F85A236356A8006A9941 /* MongoDbDelegate.swift */; };
-		9FF6F85E23635B17006A9941 /* MongoDbDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6F85A236356A8006A9941 /* MongoDbDelegate.swift */; };
+		9FF6F85E23635B17006A9941 /* ServerDatabaseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6F85A236356A8006A9941 /* ServerDatabaseDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,7 @@
 		9F75A50123514C1F0090A718 /* SharedApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedApp.h; sourceTree = "<group>"; };
 		9F75A50223514C1F0090A718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F75A50923514C6C0090A718 /* SharedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedApp.swift; sourceTree = "<group>"; };
-		9FF6F85A236356A8006A9941 /* MongoDbDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoDbDelegate.swift; sourceTree = "<group>"; };
+		9FF6F85A236356A8006A9941 /* ServerDatabaseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerDatabaseDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 				9F75A50923514C6C0090A718 /* SharedApp.swift */,
 				9F67EE0E2366732B00AC68B1 /* FullStackModels */,
 				9F67EE0A2366359000AC68B1 /* SharedAppConfig.swift */,
-				9FF6F85A236356A8006A9941 /* MongoDbDelegate.swift */,
+				9FF6F85A236356A8006A9941 /* ServerDatabaseDelegate.swift */,
 				9F75A50223514C1F0090A718 /* Info.plist */,
 			);
 			path = SharedApp;
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FF6F85E23635B17006A9941 /* MongoDbDelegate.swift in Sources */,
+				9FF6F85E23635B17006A9941 /* ServerDatabaseDelegate.swift in Sources */,
 				9F67EE112366734C00AC68B1 /* User.swift in Sources */,
 				9F67EE142366735E00AC68B1 /* PowerUp.swift in Sources */,
 				9F3D6E8A235164AE00E1DA58 /* SharedApp.swift in Sources */,
@@ -227,8 +227,8 @@
 				9F67EE102366733F00AC68B1 /* User.swift in Sources */,
 				9F75A50A23514C6C0090A718 /* SharedApp.swift in Sources */,
 				9F67EE0B2366359000AC68B1 /* SharedAppConfig.swift in Sources */,
+				9F463D772367D82100EB7FBC /* ServerDatabaseDelegate.swift in Sources */,
 				9F67EE132366735700AC68B1 /* PowerUp.swift in Sources */,
-				9FF6F85B236356A8006A9941 /* MongoDbDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

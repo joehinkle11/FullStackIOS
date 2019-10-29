@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         // Register server database with Shared App
-        SharedAppConfig.shared.setDb( serverDb: SimulatedServerDb() )
+        SharedAppConfig.shared.setDb( serverDb: SimulatedServerDb( dbName: "test" ) )
 //
 //        FullStackObjectClass.query( type: [User.self,PowerUp.self].first!, predicate: "" ) { list in
 ////                    if let list2 = list as? [User] {

@@ -11,8 +11,16 @@ import CouchbaseLiteSwift
 
 class SimulatedServerDb: ServerDatabaseDelegate {
     
-    required init() {
-        
+    // Couchbase Lite database
+    let database: Database
+    
+    init( dbName: String ) {
+        // Get the database (and create it if it doesn’t exist).
+        do {
+            database = try Database(name: dbName)
+        } catch {
+            fatalError("Error opening database")
+        }
     }
     
     func create(json: String) {

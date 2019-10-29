@@ -1,5 +1,5 @@
 //
-//  MongoDbDelegate.swift
+//  ServerDatabaseDelegate.swift
 //  SharedApp
 //
 //  Created by Joseph Hinkle on 10/25/19.
@@ -10,9 +10,6 @@ import Foundation
 
 
 public protocol ServerDatabaseDelegate: class {
-    
-    /// Initialize database
-    init()
     
     /// Create new document
     func create( json: String )
