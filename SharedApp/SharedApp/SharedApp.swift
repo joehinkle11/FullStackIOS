@@ -166,6 +166,50 @@ public class FullStackObjectClass: Identifiable {
         completion( [type.init()] )
     }
     
+    public func jsonify() -> String {
+        let properties = type(of: self).getListOfFullStackProperties()
+        return ""
+    }
+    
+    ///
+    /// CRUD IMPLEMENTATION BELOW
+    ///
+    
+    /// Create a new document on the server. Fails if a document with a matching unique key already exists. Fails immediately if object is already associated with a document on the server.
+    public func createOnServer( completion: (String) -> () ) {
+        if self.isAssociatedWithServerDoc() {
+            // fail!
+        } else {
+            // success
+        }
+    }
+    
+    /// Downloads the document associated with this from the server. Fails immediately if object is NOT associated with a document on the server.
+    public func readFromServer( updateLocalCopyOnSuccess: Bool = true, completion: (String) -> () ) {
+        if self.isAssociatedWithServerDoc() {
+            // success
+        } else {
+            // fail!
+        }
+    }
+    
+    /// Update document on the server associated with this object. Fails immediately if object is NOT associated with a document on the server.
+    public func updateToServer( completion: (String) -> () ) {
+        if self.isAssociatedWithServerDoc() {
+            // success
+        } else {
+            // fail!
+        }
+    }
+    
+    /// Delete document on the server associated with this object. Fails immediately if object is NOT associated with a document on the server.
+    public func deleteOnServer( completion: (String) -> () ) {
+        if self.isAssociatedWithServerDoc() {
+            // success
+        } else {
+            // fail!
+        }
+    }
     
 }
 
