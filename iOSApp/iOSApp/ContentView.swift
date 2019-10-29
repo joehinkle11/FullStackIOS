@@ -114,7 +114,7 @@ struct ContentView: View {
                 Button(action: {
                     let myTest = User()
                     myTest.username.set(value: "hello world!")
-                    myTest.sync()
+//                    myTest.sync()
                 }) {
                     Text("Create")
                     .fontWeight(.bold)

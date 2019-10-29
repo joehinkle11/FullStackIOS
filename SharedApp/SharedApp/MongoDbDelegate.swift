@@ -9,7 +9,24 @@
 import Foundation
 
 
-public protocol MongoDbDelegate: class {
+public protocol ServerDatabaseDelegate: class {
     
+    /// Initialize database
+    init()
+    
+    /// Create new document
+    func create( json: String )
+    
+    /// Read a document
+    func read( json: String )
+    
+    /// Update a document
+    func update( json: String )
+    
+    /// Delete a document
+    func delete( json: String )
+    
+    /// Query for documents
+    func query( json: String )
     
 }

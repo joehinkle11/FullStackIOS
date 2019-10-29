@@ -9,11 +9,16 @@
 public class SharedAppConfig {
     
     public static let shared = SharedAppConfig()
-    private var serverDb: MongoDbDelegate?
+    
+    private var _serverDb: ServerDatabaseDelegate?
+    public static var serverDb: ServerDatabaseDelegate {
+        // if _serverDb is not setup, then it isn't possible to run the server
+        return shared._serverDb!
+    }
     
     private init() { }
     
-    public func setDb( serverDb: MongoDbDelegate ) {
-        self.serverDb = serverDb
+    public func setDb( serverDb: ServerDatabaseDelegate ) {
+        self._serverDb = serverDb
     }
 }

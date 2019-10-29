@@ -8,7 +8,7 @@
 import SharedApp
 import MongoKitten
 
-public class ServerDb: MongoDbDelegate {
+public class ServerDb: ServerDatabaseDelegate {
 
 
 }

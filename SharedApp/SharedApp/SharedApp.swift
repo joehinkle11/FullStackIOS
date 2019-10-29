@@ -181,6 +181,7 @@ public class FullStackObjectClass: Identifiable {
             // fail!
         } else {
             // success
+            SharedAppConfig.serverDb
         }
     }
     
