@@ -26,7 +26,7 @@ public class ServerDb: ServerDatabaseDelegate {
     }
     
     public func query(json: String) {
-        
+        	
     }
     
 

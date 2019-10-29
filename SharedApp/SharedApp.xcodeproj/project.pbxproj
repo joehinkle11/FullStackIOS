@@ -11,6 +11,7 @@
 		9F3D6E8A235164AE00E1DA58 /* SharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F75A50923514C6C0090A718 /* SharedApp.swift */; };
 		9F463D772367D82100EB7FBC /* ServerDatabaseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6F85A236356A8006A9941 /* ServerDatabaseDelegate.swift */; };
 		9F463D7D2367DC1300EB7FBC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9F463D7C2367DC1300EB7FBC /* Alamofire */; };
+		9F463D882367E0A800EB7FBC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 9F463D872367E0A800EB7FBC /* Alamofire */; };
 		9F67EE0B2366359000AC68B1 /* SharedAppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67EE0A2366359000AC68B1 /* SharedAppConfig.swift */; };
 		9F67EE0D236638AB00AC68B1 /* SharedAppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67EE0A2366359000AC68B1 /* SharedAppConfig.swift */; };
 		9F67EE102366733F00AC68B1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67EE0F2366733F00AC68B1 /* User.swift */; };
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F463D882367E0A800EB7FBC /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +57,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F463D862367E0A800EB7FBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9F67EE0E2366732B00AC68B1 /* FullStackModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +80,7 @@
 				9F75A4FF23514C1F0090A718 /* Products */,
 				9F3D6E852351639300E1DA58 /* SharedApp copy-Info.plist */,
 				9F3D6E91235164AE00E1DA58 /* SharedApp copy2-Info.plist */,
+				9F463D862367E0A800EB7FBC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,9 +140,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				9F463D852367DDDD00EB7FBC /* PBXTargetDependency */,
 			);
 			name = SharedApp2;
+			packageProductDependencies = (
+				9F463D872367E0A800EB7FBC /* Alamofire */,
+			);
 			productName = SharedApp;
 			productReference = 9F3D6E90235164AE00E1DA58 /* SharedApp2.framework */;
 			productType = "com.apple.product-type.framework";
@@ -244,10 +256,6 @@
 		9F463D832367DD2800EB7FBC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 9F463D822367DD2800EB7FBC /* Alamofire */;
-		};
-		9F463D852367DDDD00EB7FBC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 9F463D842367DDDD00EB7FBC /* Alamofire */;
 		};
 /* End PBXTargetDependency section */
 
@@ -540,7 +548,7 @@
 			package = 9F463D7B2367DC1300EB7FBC /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		9F463D842367DDDD00EB7FBC /* Alamofire */ = {
+		9F463D872367E0A800EB7FBC /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9F463D7B2367DC1300EB7FBC /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
