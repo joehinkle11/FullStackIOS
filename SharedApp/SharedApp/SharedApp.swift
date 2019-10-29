@@ -9,7 +9,6 @@
 import Foundation
 
 
-
 public typealias FullStackObject = FullStackObjectClass & FullStackObjectPrototype
 
 public protocol FullStackObjectPrototype {
@@ -56,8 +55,19 @@ public class FullStackProperty<T> {
     }
     
     
-    func sync( completion: (String) -> () ) {
-        completion("asdf")
+    public func sync( completion: (String) -> () ) {
+        completion("success!")
+    }
+    
+    public func set( value: T?, immediatelySyncWithCompletion: ((String) -> ())? = nil ) {
+        self.value = value
+        if let completion = immediatelySyncWithCompletion {
+            self.sync(completion: completion)
+        }
+    }
+    
+    public func get() -> T? {
+        return self.value
     }
     
     

@@ -112,6 +112,9 @@ struct ContentView: View {
             
             HStack (alignment: .center, spacing: 10) {
                 Button(action: {
+                    let myTest = User()
+                    myTest.username.set(value: "hello world!")
+                    myTest.
                 }) {
                     Text("Create")
                     .fontWeight(.bold)
