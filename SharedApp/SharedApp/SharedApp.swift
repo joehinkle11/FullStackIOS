@@ -111,7 +111,7 @@ public struct FullStackProperties {
     public let bools: [FullStackBool]
 }
 
-public class FullStackObjectClass {
+public class FullStackObjectClass: Identifiable {
     
     //
     private var _docId: String?

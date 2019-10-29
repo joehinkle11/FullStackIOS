@@ -16,8 +16,10 @@ struct ContentView: View {
     let documentOptions: [FullStackObject.Type] = [User.self, PowerUp.self]
     @State private var documentTypeSelectedId = 0
     
-    @State private var queryResults: [FullStackObject]?
+    @State private var queryText: String = ""
+    @State private var queryResults: [FullStackObject] = []
     @State private var documentSelected: FullStackObject?
+    
     
     
     var body: some View {
@@ -66,17 +68,11 @@ struct ContentView: View {
             Text("Query for docs in \"\(selectedDocumentType.databaseCollectionName)\"")
                 .font(.title)
             
-//            TextField("", text: <#T##Binding<String>#>)
+            TextField("Put your query for \(selectedDocumentType.databaseCollectionName) here", text: $queryText)
             
             Button(action: {
-                FullStackObjectClass.query( type: selectedDocumentType, predicate: "" ) { list in
-                    if let list2 = list as? [User] {
-                        print(list2)
-                    }
-//                    print(type(of: list))
-////                    print(list is )
-                    print(list)
-                    print("done")
+                FullStackObjectClass.query( type: selectedDocumentType, predicate: self.queryText ) { list in
+                    self.queryResults = list as! [FullStackObject]
                 }
                 User.query( predicate: "" ) { list in
                     print(list)
@@ -97,6 +93,15 @@ struct ContentView: View {
             }
             
             Divider()
+            
+            if queryResults.count > 0 {
+                ForEach(0..<queryResults.count) { i in
+//                    Text(self.queryResults[i].)
+                    Text(String(i))
+                }
+                Divider()
+            }
+            
             
             HStack (alignment: .center, spacing: 10) {
                 Button(action: {
