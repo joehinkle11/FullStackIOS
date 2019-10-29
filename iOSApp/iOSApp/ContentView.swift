@@ -96,12 +96,19 @@ struct ContentView: View {
             
             if queryResults.count > 0 {
                 ForEach(0..<queryResults.count) { i in
-//                    Text(self.queryResults[i].)
-                    Text(String(i))
+                    HStack (spacing: 15) {
+                        Text("Object: " + String(i))
+                        Button(action: {
+                        }) {
+                            Text("Delete")
+                            .background(Color.red)
+                            .cornerRadius(15)
+                            .foregroundColor(.white)
+                        }
+                    }
                 }
                 Divider()
             }
-            
             
             HStack (alignment: .center, spacing: 10) {
                 Button(action: {
@@ -109,32 +116,15 @@ struct ContentView: View {
                     Text("Create")
                     .fontWeight(.bold)
                     .padding()
-                    .background((documentSelected == nil) ? Color.green.opacity(0.5) : Color.green)
+                    .background(Color.green)
                     .cornerRadius(40)
                     .foregroundColor(.white)
                     .padding(10)
                     .overlay(
                         RoundedRectangle(cornerRadius: 40)
-                            .stroke((documentSelected == nil) ? Color.green.opacity(0.5) : Color.green, lineWidth: 5)
+                            .stroke(Color.green, lineWidth: 5)
                     )
                 }
-                .disabled(documentSelected == nil)
-                
-                Button(action: {
-                }) {
-                    Text("Delete")
-                    .fontWeight(.bold)
-                    .padding()
-                    .background((documentSelected == nil) ? Color.red.opacity(0.5) : Color.red)
-                    .cornerRadius(40)
-                    .foregroundColor(.white)
-                    .padding(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke((documentSelected == nil) ? Color.red.opacity(0.5) : Color.red, lineWidth: 5)
-                    )
-                }
-                .disabled(documentSelected == nil)
             }
         })
     }
