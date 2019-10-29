@@ -23,6 +23,13 @@ class SimulatedServerDb: ServerDatabaseDelegate {
         }
     }
     
+    private func jsonToMutableDoc(json: String) -> MutableDocument {
+        let mutableDoc = MutableDocument()
+//        .setFloat(2.0, forKey: "version")
+//        .setString("SDK", forKey: "type")
+        return mutableDoc
+    }
+    
     func create(json: String) {
         
     }

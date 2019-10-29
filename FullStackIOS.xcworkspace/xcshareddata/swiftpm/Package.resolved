@@ -2,48 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "BSON",
-        "repositoryURL": "https://github.com/OpenKitten/BSON.git",
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
         "state": {
           "branch": null,
-          "revision": "998a3842198941e87ec8c8cafe8e2d279d1cf90d",
-          "version": "7.0.6"
-        }
-      },
-      {
-        "package": "MongoKitten",
-        "repositoryURL": "https://github.com/OpenKitten/MongoKitten",
-        "state": {
-          "branch": null,
-          "revision": "75dc45377e3cb70e83415563035f51c4d91d27d5",
-          "version": "6.0.1"
-        }
-      },
-      {
-        "package": "DNSClient",
-        "repositoryURL": "https://github.com/openkitten/NioDNS.git",
-        "state": {
-          "branch": null,
-          "revision": "573159c63fa3dd7a01c5df3789ca917f0c816f9a",
-          "version": "2.0.0"
-        }
-      },
-      {
-        "package": "swift-nio",
-        "repositoryURL": "https://github.com/apple/swift-nio.git",
-        "state": {
-          "branch": null,
-          "revision": "8066b0f581604e3711979307a4377457e2b0f007",
-          "version": "2.9.0"
-        }
-      },
-      {
-        "package": "swift-nio-ssl",
-        "repositoryURL": "https://github.com/apple/swift-nio-ssl.git",
-        "state": {
-          "branch": null,
-          "revision": "e5c1af45ac934ac0a6117b2927a51d845cf4f705",
-          "version": "2.4.3"
+          "revision": "2cbf59935fbb1f26e352ce4db53f1cf9408d5313",
+          "version": "5.0.0-rc.3"
         }
       }
     ]

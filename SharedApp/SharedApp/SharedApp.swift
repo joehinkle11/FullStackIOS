@@ -6,8 +6,7 @@
 //  Copyright © 2019 Joseph Hinkle. All rights reserved.
 //
 
-import Foundation
-
+import Alamofire
 
 public typealias FullStackObject = FullStackObjectClass & FullStackObjectPrototype
 
@@ -181,7 +180,11 @@ public class FullStackObjectClass: Identifiable {
             // fail!
         } else {
             // success
-            SharedAppConfig.serverDb
+            AF.download("https://www.google.com/")
+//            AF.request("https://httpbin.org/get").responseJSON { response in
+//                debugPrint("Response: \(response)")
+//            }
+//            SharedAppConfig.serverDb
         }
     }
     
