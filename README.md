@@ -1,4 +1,4 @@
-This project is on hold while I do more research into distributed computing. There are some theoretical problems I'm encountering. I will problaby have to make some serious adjustments if I want something like this.
+This project is on hold while I do more research into distributed computing. There are some theoretical problems I'm encountering. I will probably have to make some serious adjustments if I want something like this.
 
 Papers which are making me question my project
  - https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm
