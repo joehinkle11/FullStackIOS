@@ -1,3 +1,9 @@
+This project is on hold while I do more research into distributed computing. There are some theoretical problems I'm encountering. I will problaby have to make some serious adjustments if I want something like this.
+
+Papers which are making me question my project
+ - https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm
+ - https://github.com/papers-we-love/papers-we-love/blob/master/distributed_systems/a-note-on-distributed-computing.pdf
+
 # FullStackIOS
 
 This is an experimental idea where the "full stack" of an iOS app is developed by inheriting from one class called `FullStackObject`. Subclasses of this class are basically data models with super-full-stack-powers. All subclasses of `FullStackObject` should be put inside the `SharedApp` project in your Xcode workspace. Then your `iOS App` project (frontend) and `ServerApp` project (backend) will read your data models in `SharedApp` to automatically handle all things full stack.
